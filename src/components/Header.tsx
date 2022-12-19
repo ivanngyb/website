@@ -8,8 +8,11 @@ export const Header = () => {
       sx={{
         height: "100vh",
         backgroundImage: "url(/header-bg.svg)",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         padding: "2rem",
+        backgroundPosition: "left bottom",
       }}
     >
       <Flex direction={"column"} align={"flex-start"}>
