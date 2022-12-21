@@ -15,6 +15,7 @@ export const Header = ({
       align={"center"}
       sx={{
         height: "100vh",
+        minHeight: "-webkit-fill-available",
         backgroundImage: "url(/header-bg.svg)",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
