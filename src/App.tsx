@@ -1,19 +1,11 @@
-import { Box, Transition } from "@mantine/core";
-import React from "react";
+import { Box } from "@mantine/core";
+import { AboutMe } from "./components/about-me/AboutMe";
 import { Header } from "./components/Header";
 function App() {
   return (
     <Box>
-      <Transition
-        transition="scale"
-        duration={400}
-        timingFunction="ease"
-        mounted={true}
-      >
-        {() => <Header />}
-      </Transition>
-
-      <Box sx={{ height: "100vh" }}></Box>
+      <Header />
+      <AboutMe />
     </Box>
   );
 }

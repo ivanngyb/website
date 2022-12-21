@@ -6,7 +6,7 @@ export const Header = () => {
       justify={"center"}
       align={"center"}
       sx={{
-        height: "100vh",
+        height: "95vh",
         backgroundImage: "url(/header-bg.svg)",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
@@ -46,19 +46,6 @@ export const Header = () => {
         >
           I'm a Full Stack Developer
         </Text>
-        {/* <Button
-          radius={"xl"}
-          sx={{
-            marginTop: "2rem",
-            background: "#44A7F2",
-            width: "15em",
-            height: "2.5em",
-            color: "black",
-            fontSize: "1.5rem",
-          }}
-        >
-          View my portfolio
-        </Button> */}
       </Flex>
     </Flex>
   );
