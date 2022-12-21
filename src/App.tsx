@@ -8,9 +8,10 @@ function App() {
   const [togglePortfolio, setTogglePortfolio] = useState(false);
   const [toggleAbout, setToggleAbout] = useState(false);
   return (
-    <Box>
+    <Box sx={{ background: "#F64740" }}>
       {toggleAbout && <AboutMe />}
       {togglePortfolio && <Portfolio />}
+
       <Header
         togglePortfolio={setTogglePortfolio}
         toggleAbout={setToggleAbout}

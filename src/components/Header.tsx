@@ -22,6 +22,17 @@ export const Header = ({
         "@media (max-width:1110px)": {
           backgroundPosition: "left bottom",
         },
+        animation: "circle 2s infinite",
+        animationIterationCount: 1,
+        clipPath: "circle(75%)",
+        "@keyframes circle": {
+          "100%": {
+            clipPath: "circle(75%)",
+          },
+          "0%": {
+            clipPath: "circle(0%)",
+          },
+        },
       }}
     >
       <Flex
