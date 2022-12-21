@@ -3,7 +3,7 @@ import React from "react";
 
 type CoolButtonProps = {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
 } & ButtonProps;
 

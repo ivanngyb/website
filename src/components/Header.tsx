@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from "@mantine/core";
+import { SvgMailIcon } from "../assets";
 import { Coolbutton } from "./Coolbutton";
 
 export const Header = ({
@@ -66,7 +67,6 @@ export const Header = ({
             Portfolio
           </Coolbutton>
         </Flex>
-
         <Box>
           <Text
             sx={{
@@ -109,13 +109,7 @@ export const Header = ({
             Full Stack Developer
           </Text>
         </Box>
-        <Coolbutton
-          onClick={() => {
-            toggleAbout(true);
-          }}
-        >
-          ContactMe
-        </Coolbutton>
+        <Coolbutton onClick={() => {}}>ContactMe</Coolbutton>
       </Flex>
     </Flex>
   );

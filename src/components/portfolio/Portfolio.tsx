@@ -1,9 +1,17 @@
 import { Flex, Text } from "@mantine/core";
 import { Overlay } from "../Overlay";
 
-export const Portfolio = () => {
+export const Portfolio = ({
+  togglePortfolio,
+}: {
+  togglePortfolio: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
-    <Overlay>
+    <Overlay
+      onClose={() => {
+        togglePortfolio(false);
+      }}
+    >
       {/* <CloseButton
    sx={{
      position: "fixed",
