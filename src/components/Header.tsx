@@ -1,5 +1,4 @@
 import { Box, Flex, Text } from "@mantine/core";
-import { SvgMailIcon } from "../assets";
 import { Coolbutton } from "./Coolbutton";
 
 export const Header = ({
