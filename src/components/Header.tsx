@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from "@mantine/core";
+import { SvgMailIcon } from "../assets";
 import { Coolbutton } from "./Coolbutton";
 
 export const Header = ({
@@ -13,8 +14,7 @@ export const Header = ({
       justify={"center"}
       align={"center"}
       sx={{
-        height: "100vh",
-        minHeight: "-webkit-fill-available",
+        height: "100%",
         backgroundImage: "url(/header-bg.svg)",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
@@ -67,6 +67,7 @@ export const Header = ({
             Portfolio
           </Coolbutton>
         </Flex>
+
         <Box>
           <Text
             sx={{
@@ -109,7 +110,23 @@ export const Header = ({
             Full Stack Developer
           </Text>
         </Box>
-        <Coolbutton onClick={() => {}}>ContactMe</Coolbutton>
+        <Coolbutton
+          rightIcon={
+            <SvgMailIcon
+              sx={{
+                fill: "#fff4e0",
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          }
+          onClick={(e: React.MouseEvent<HTMLElement>) => {
+            window.location.href = "mailto:ivanngyb2@gmail.com";
+            e.preventDefault();
+          }}
+        >
+          ContactMe
+        </Coolbutton>
       </Flex>
     </Flex>
   );
