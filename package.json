@@ -46,6 +46,9 @@
     ]
   },
   "devDependencies": {
-    "file-loader": "^6.2.0"
+    "@svgr/core": "^6.5.1",
+    "@svgr/webpack": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "svg-loader": "^0.0.2"
   }
 }

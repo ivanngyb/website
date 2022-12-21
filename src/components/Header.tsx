@@ -1,4 +1,5 @@
-import { Box, Button, Flex, Text } from "@mantine/core";
+import { Box, Flex, Text } from "@mantine/core";
+import { Coolbutton } from "./Coolbutton";
 
 export const Header = ({
   togglePortfolio,
@@ -41,35 +42,31 @@ export const Header = ({
         justify={"space-between"}
         sx={{ height: "100%" }}
       >
-        <Button
-          onClick={() => {
-            togglePortfolio(true);
-          }}
+        <Flex
           sx={{
-            fontSize: "3em",
-            color: "#fff4e0",
-            lineHeight: "1em",
-            textAlign: "center",
-            fontFamily: "Liquido Regular",
-            fontWeight: "lighter",
-            height: "auto",
-            background: "#F6474000",
-            width: "5em",
-            borderRadius: "0",
-            transition: "all .1s linear",
-          }}
-          styles={() => ({
-            root: {
-              "&:hover": {
-                backgroundPosition: "bottom",
-                background: "#F64740",
-                color: "#fffbf4",
-              },
+            "@media (max-width:660px)": {
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
             },
-          })}
+          }}
         >
-          Portfolio
-        </Button>
+          <Coolbutton
+            onClick={() => {
+              toggleAbout(true);
+            }}
+          >
+            AboutMe
+          </Coolbutton>
+          <Coolbutton
+            onClick={() => {
+              togglePortfolio(true);
+            }}
+          >
+            Portfolio
+          </Coolbutton>
+        </Flex>
+
         <Box>
           <Text
             sx={{
@@ -112,35 +109,13 @@ export const Header = ({
             Full Stack Developer
           </Text>
         </Box>
-        <Button
+        <Coolbutton
           onClick={() => {
             toggleAbout(true);
           }}
-          sx={{
-            fontSize: "3em",
-            color: "#fff4e0",
-            lineHeight: "1em",
-            textAlign: "center",
-            fontFamily: "Liquido Regular",
-            fontWeight: "lighter",
-            height: "auto",
-            background: "#F6474000",
-            width: "5em",
-            borderRadius: "0",
-            transition: "all .1s linear",
-          }}
-          styles={() => ({
-            root: {
-              "&:hover": {
-                backgroundPosition: "bottom",
-                background: "#F64740",
-                color: "#fffbf4",
-              },
-            },
-          })}
         >
-          About Me
-        </Button>
+          ContactMe
+        </Coolbutton>
       </Flex>
     </Flex>
   );

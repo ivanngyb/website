@@ -11,7 +11,6 @@ function App() {
     <Box sx={{ background: "#F64740" }}>
       {toggleAbout && <AboutMe />}
       {togglePortfolio && <Portfolio />}
-
       <Header
         togglePortfolio={setTogglePortfolio}
         toggleAbout={setToggleAbout}
