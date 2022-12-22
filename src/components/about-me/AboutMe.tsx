@@ -13,7 +13,7 @@ export const AboutMe = ({
       onClose={() => {
         toggleAbout(false);
       }}
-      sx={{ overflowY: "scroll" }}
+      sx={{ overflowY: "auto" }}
     >
       <Flex
         direction={"column"}
@@ -46,9 +46,11 @@ export const AboutMe = ({
             fontWeight: "bold",
             "@media (max-width:640px)": {
               fontSize: "1.3em",
+              textAlign: "justify",
             },
             "@media (max-width:330px)": {
               fontSize: "1em",
+              textAlign: "justify",
             },
           }}
         >
@@ -85,6 +87,7 @@ export const AboutMe = ({
               sx={{
                 fontSize: "1.3em",
                 color: "#001122",
+                textAlign: "justify",
               }}
             >
               I'm a Full Stack Developer from Perth, Australia with a love for
@@ -97,6 +100,7 @@ export const AboutMe = ({
               sx={{
                 fontSize: "1.3em",
                 color: "#001122",
+                textAlign: "justify",
               }}
             >
               I'm a great team player and love working with others to bring the
