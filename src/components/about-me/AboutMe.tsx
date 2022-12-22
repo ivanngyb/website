@@ -1,5 +1,4 @@
-import { Flex, Image, Text } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { Box, Flex, Text } from "@mantine/core";
 import { Overlay } from "../Overlay";
 
 export const AboutMe = ({
@@ -7,7 +6,6 @@ export const AboutMe = ({
 }: {
   toggleAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const matches = useMediaQuery("(max-width: 1024px)");
   return (
     <Overlay
       onClose={() => {
@@ -37,25 +35,7 @@ export const AboutMe = ({
         >
           AboutMe
         </Text>
-        <Text
-          sx={{
-            maxWidth: "20em",
-            textAlign: "center",
-            fontSize: "1.7em",
-            color: "#001122",
-            fontWeight: "bold",
-            "@media (max-width:640px)": {
-              fontSize: "1.3em",
-            },
-            "@media (max-width:330px)": {
-              fontSize: "1em",
-            },
-          }}
-        >
-          I'm committed to driving successful projects from concept to
-          deployment and beyond
-        </Text>
-        <br />
+
         <Flex
           gap={"lg"}
           align="center"
@@ -65,25 +45,22 @@ export const AboutMe = ({
             },
           }}
         >
-          <Image
+          {/* <Image
             fit="none"
             src="/profile-picture.jpg"
             alt="Hey Thats Me"
             width={matches ? "100%" : "20em"}
             height={matches ? "10em" : "100%"}
-          />
+          /> */}
           <Flex
             direction={"column"}
             sx={{
-              maxWidth: "25em",
-              "@media (max-width:1024px)": {
-                maxWidth: "31em",
-              },
+              maxWidth: "70em",
             }}
           >
             <Text
               sx={{
-                fontSize: "1.3em",
+                fontSize: "1.5em",
                 color: "#001122",
                 textAlign: "justify",
               }}
@@ -96,7 +73,7 @@ export const AboutMe = ({
             <br />
             <Text
               sx={{
-                fontSize: "1.3em",
+                fontSize: "1.5em",
                 color: "#001122",
                 textAlign: "justify",
               }}
@@ -121,10 +98,105 @@ export const AboutMe = ({
             "@media (max-width:330px)": {
               fontSize: "7em",
             },
+            marginBottom: "0.25em",
           }}
         >
           Skills
         </Text>
+        <Flex sx={{ maxWidth: "70rem" }} direction="column" gap={"xl"}>
+          {" "}
+          <Flex sx={{ width: "100%" }} direction="column">
+            <Text
+              sx={{
+                fontSize: "1.5em",
+                color: "#082a4d",
+                lineHeight: "1em",
+                fontFamily: "Munich",
+                "@media (max-width:640px)": {
+                  fontSize: "2em",
+                },
+              }}
+            >
+              Langauges
+            </Text>
+            <Box>
+              <Text
+                sx={{
+                  fontSize: "4em",
+                  color: "#082a4d",
+                  lineHeight: "1em",
+                  fontFamily: "Liquido Regular",
+                  "@media (max-width:640px)": {
+                    fontSize: "4em",
+                  },
+                }}
+              >
+                Golang, Typescript
+              </Text>
+            </Box>
+          </Flex>
+          <Flex sx={{ width: "100%" }} direction="column">
+            <Text
+              sx={{
+                fontSize: "1.5em",
+                color: "#082a4d",
+                lineHeight: "1em",
+                fontFamily: "Munich",
+                "@media (max-width:640px)": {
+                  fontSize: "2em",
+                },
+              }}
+            >
+              Frameworks and Technologies
+            </Text>
+            <Box>
+              <Text
+                sx={{
+                  fontSize: "4em",
+                  color: "#082a4d",
+                  lineHeight: "1em",
+                  fontFamily: "Liquido Regular",
+                  "@media (max-width:640px)": {
+                    fontSize: "4em",
+                  },
+                }}
+              >
+                Postgre SQL, Docker, AWS, Cloudflare, React, REST, WebSocket,
+                Mantine
+              </Text>
+            </Box>
+          </Flex>
+          <Flex sx={{ width: "100%" }} direction="column">
+            <Text
+              sx={{
+                fontSize: "1.5em",
+                color: "#082a4d",
+                lineHeight: "1em",
+                fontFamily: "Munich",
+                "@media (max-width:640px)": {
+                  fontSize: "2em",
+                },
+              }}
+            >
+              Tools
+            </Text>
+            <Box>
+              <Text
+                sx={{
+                  fontSize: "4em",
+                  color: "#082a4d",
+                  lineHeight: "1em",
+                  fontFamily: "Liquido Regular",
+                  "@media (max-width:640px)": {
+                    fontSize: "4em",
+                  },
+                }}
+              >
+                VS Code, IntelliJ Idea, Windows, Linux, Git, Github
+              </Text>
+            </Box>
+          </Flex>
+        </Flex>
       </Flex>
     </Overlay>
   );

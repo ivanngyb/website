@@ -5,6 +5,7 @@ import App from "./App";
 import { Global, MantineProvider } from "@mantine/core";
 import regular from "./assets/fonts/liquido-reg.otf";
 import fluid from "./assets/fonts/liquido-fluid.otf";
+import munich from "./assets/fonts/munich.ttf";
 
 function GlobalStyles() {
   return (
@@ -26,6 +27,14 @@ function GlobalStyles() {
             fontStyle: "normal",
           },
         },
+        {
+          "@font-face": {
+            fontFamily: "Munich",
+            src: `url('${munich}')`,
+            fontWeight: 400,
+            fontStyle: "normal",
+          },
+        },
       ]}
     />
   );
@@ -41,7 +50,7 @@ root.render(
       withNormalizeCSS
       theme={{
         colorScheme: "light",
-        fontFamily: "Lato",
+        fontFamily: "Munich",
       }}
     >
       <GlobalStyles />

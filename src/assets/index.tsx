@@ -2,6 +2,8 @@ import { Box, BoxProps } from "@mantine/core";
 import React from "react";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MailIcon from "!@svgr/webpack!./images/mailicon.svg";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import ReactIcon from "!@svgr/webpack!./images/react.svg";
 
 export interface SvgWrapperProps extends BoxProps {
   className?: string;
@@ -57,5 +59,13 @@ export const SvgMailIcon: React.VoidFunctionComponent<SvgWrapperProps> = (
 ) => (
   <SvgWrapper {...props}>
     <MailIcon />
+  </SvgWrapper>
+);
+
+export const SvgReactIcon: React.VoidFunctionComponent<SvgWrapperProps> = (
+  props
+) => (
+  <SvgWrapper {...props}>
+    <ReactIcon />
   </SvgWrapper>
 );
