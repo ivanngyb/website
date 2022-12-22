@@ -26,7 +26,7 @@ export const AboutMe = ({
             color: "#F64740",
             lineHeight: "1em",
             textAlign: "center",
-            fontFamily: "Liquido Fluid",
+            fontFamily: "Liquido Regular",
             "@media (max-width:640px)": {
               fontSize: "10em",
             },
@@ -46,11 +46,9 @@ export const AboutMe = ({
             fontWeight: "bold",
             "@media (max-width:640px)": {
               fontSize: "1.3em",
-              textAlign: "justify",
             },
             "@media (max-width:330px)": {
               fontSize: "1em",
-              textAlign: "justify",
             },
           }}
         >
@@ -116,7 +114,7 @@ export const AboutMe = ({
             color: "#F64740",
             lineHeight: "1em",
             textAlign: "center",
-            fontFamily: "Liquido Fluid",
+            fontFamily: "Liquido Regular",
             "@media (max-width:640px)": {
               fontSize: "10em",
             },
