@@ -1,12 +1,14 @@
-import { Box, CloseButton } from "@mantine/core";
+import { Box, CloseButton, Sx } from "@mantine/core";
 import React from "react";
 
 export const Overlay = ({
   children,
   onClose,
+  sx,
 }: {
   children: React.ReactNode;
   onClose: () => void;
+  sx?: Sx;
 }) => {
   const escFunction = (event: KeyboardEvent) => {
     if (event.key === "Escape") {
@@ -36,9 +38,16 @@ export const Overlay = ({
             clipPath: "circle(0%)",
           },
         },
+        padding: "1rem 1rem",
+        ...sx,
       }}
     >
-      <CloseButton size={50} color="dark" onClick={onClose} />
+      <CloseButton
+        size={50}
+        color="dark"
+        onClick={onClose}
+        sx={{ position: "fixed" }}
+      />
       {children}
     </Box>
   );

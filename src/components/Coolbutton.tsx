@@ -38,6 +38,9 @@ export const Coolbutton = ({
             background: "#F64740",
             color: "#fffbf4",
           },
+          "&:focus": {
+            outline: "none",
+          },
         },
       })}
     >
