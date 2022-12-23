@@ -1,5 +1,5 @@
 import { Flex } from "@mantine/core";
-import { Overlay } from "../Overlay";
+import { FancyOverlay } from "../FancyOverlay";
 import { AboutMe } from "./AboutMe";
 import { AboutMeSkills } from "./AboutMeSkills";
 
@@ -9,7 +9,7 @@ export const AboutMePage = ({
   toggleAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
-    <Overlay
+    <FancyOverlay
       onClose={() => {
         toggleAbout(false);
       }}
@@ -24,6 +24,6 @@ export const AboutMePage = ({
         <AboutMe />
         <AboutMeSkills />
       </Flex>
-    </Overlay>
+    </FancyOverlay>
   );
 };

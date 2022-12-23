@@ -1,5 +1,5 @@
 import { Flex, Text } from "@mantine/core";
-import { Overlay } from "../Overlay";
+import { FancyOverlay } from "../FancyOverlay";
 
 export const Portfolio = ({
   togglePortfolio,
@@ -7,19 +7,11 @@ export const Portfolio = ({
   togglePortfolio: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
-    <Overlay
+    <FancyOverlay
       onClose={() => {
         togglePortfolio(false);
       }}
     >
-      {/* <CloseButton
-   sx={{
-     position: "fixed",
-   }}
-   size="xl"
-   color="black"
- /> */}
-
       <Flex
         justify={"center"}
         align="center"
@@ -27,6 +19,6 @@ export const Portfolio = ({
       >
         <Text>Portfolio</Text>
       </Flex>
-    </Overlay>
+    </FancyOverlay>
   );
 };
