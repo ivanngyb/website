@@ -1,6 +1,7 @@
-import { Box, Flex, Text } from "@mantine/core";
+import { Flex, Text } from "@mantine/core";
 import { SvgMailIcon } from "../assets";
 import { Coolbutton } from "./Coolbutton";
+import { SocialIcons } from "./SocialIcons";
 
 export const Header = ({
   togglePortfolio,
@@ -68,7 +69,7 @@ export const Header = ({
           </Coolbutton>
         </Flex>
 
-        <Box>
+        <Flex direction={"column"}>
           <Text
             sx={{
               fontSize: "30em",
@@ -109,7 +110,8 @@ export const Header = ({
           >
             Full Stack Developer
           </Text>
-        </Box>
+          <SocialIcons />
+        </Flex>
         <Coolbutton
           rightIcon={
             <SvgMailIcon

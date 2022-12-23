@@ -4,6 +4,10 @@ import React from "react";
 import MailIcon from "!@svgr/webpack!./images/mailicon.svg";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import ReactIcon from "!@svgr/webpack!./images/react.svg";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import GithubIcon from "!@svgr/webpack!./images/github.svg";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import LinkedIn from "!@svgr/webpack!./images/linkedin.svg";
 
 export interface SvgWrapperProps extends BoxProps {
   className?: string;
@@ -14,6 +18,7 @@ export interface SvgWrapperProps extends BoxProps {
   stroke?: string;
   strokeWidth?: string;
   inline?: boolean;
+  onClick?: () => void;
 }
 
 export const SvgWrapper = React.memo(function SvgWrapper({
@@ -26,10 +31,12 @@ export const SvgWrapper = React.memo(function SvgWrapper({
   width,
   height,
   inline,
+  onClick,
   ...props
 }: SvgWrapperProps) {
   return (
     <Box
+      onClick={onClick}
       className={className}
       component="span"
       sx={{
@@ -67,5 +74,21 @@ export const SvgReactIcon: React.VoidFunctionComponent<SvgWrapperProps> = (
 ) => (
   <SvgWrapper {...props}>
     <ReactIcon />
+  </SvgWrapper>
+);
+
+export const SvgGithubIcon: React.VoidFunctionComponent<SvgWrapperProps> = (
+  props
+) => (
+  <SvgWrapper {...props}>
+    <GithubIcon />
+  </SvgWrapper>
+);
+
+export const SvgLinkedinIcon: React.VoidFunctionComponent<SvgWrapperProps> = (
+  props
+) => (
+  <SvgWrapper {...props}>
+    <LinkedIn />
   </SvgWrapper>
 );
