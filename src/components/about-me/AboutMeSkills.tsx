@@ -66,8 +66,7 @@ export const AboutMeSkills = () => {
         <Flex sx={{ width: "100%" }} direction="column">
           <SkillsHeaderText>Frameworks and Technologies</SkillsHeaderText>
           <SkillsBodyText>
-            Postgre SQL, Docker, AWS, Cloudflare, React, REST, WebSocket,
-            Mantine
+            PostgreSQL, Docker, AWS, Cloudflare, React, REST, WebSocket, Mantine
           </SkillsBodyText>
         </Flex>
         <Flex sx={{ width: "100%" }} direction="column">
