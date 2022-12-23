@@ -99,7 +99,7 @@ export const Header = ({
               "@media (max-width:1110px)": {
                 fontSize: "5em",
               },
-              "@media (max-width:520px)": {
+              "@media (max-width:540px)": {
                 fontSize: "3em",
               },
               "@media (max-width:330px)": {
