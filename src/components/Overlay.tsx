@@ -46,7 +46,7 @@ export const Overlay = ({
         size={50}
         color="dark"
         onClick={onClose}
-        sx={{ position: "fixed" }}
+        sx={{ position: "fixed", zIndex: 99 }}
       />
       {children}
     </Box>
