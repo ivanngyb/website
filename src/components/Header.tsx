@@ -24,7 +24,6 @@ export const Header = ({
         const resp = await axios({
           method: "get",
           url: `${API_ENDPOINT}/check`,
-          withCredentials: false,
         });
 
         if (resp.status === 200) {
@@ -34,7 +33,7 @@ export const Header = ({
         console.error(error);
       }
     })();
-  }, [showForm]);
+  }, []);
 
   return (
     <Flex
