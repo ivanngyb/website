@@ -6,6 +6,8 @@ import { Global, MantineProvider } from "@mantine/core";
 import regular from "./assets/fonts/liquido-reg.otf";
 import fluid from "./assets/fonts/liquido-fluid.otf";
 import munich from "./assets/fonts/munich.ttf";
+import robotoReg from "./assets/fonts/Roboto-Regular.ttf";
+import robotoBold from "./assets/fonts/Roboto-Bold.ttf";
 
 function GlobalStyles() {
   return (
@@ -32,6 +34,22 @@ function GlobalStyles() {
             fontFamily: "Munich",
             src: `url('${munich}')`,
             fontWeight: 400,
+            fontStyle: "normal",
+          },
+        },
+        {
+          "@font-face": {
+            fontFamily: "Roboto Regular",
+            src: `url('${robotoReg}')`,
+            fontWeight: 400,
+            fontStyle: "normal",
+          },
+        },
+        {
+          "@font-face": {
+            fontFamily: "Roboto Bold",
+            src: `url('${robotoBold}')`,
+            fontWeight: 700,
             fontStyle: "normal",
           },
         },

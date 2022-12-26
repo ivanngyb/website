@@ -1,25 +1,10 @@
 import { Box, Flex, Text } from "@mantine/core";
+import { CoolHeader } from "../Coolheader";
 
 export const AboutMe = () => {
   return (
     <Box sx={{ maxWidth: "70em" }}>
-      <Text
-        sx={{
-          fontSize: "15em",
-          color: "#F64740",
-          lineHeight: "1em",
-          textAlign: "center",
-          fontFamily: "Liquido Regular",
-          "@media (max-width:640px)": {
-            fontSize: "10em",
-          },
-          "@media (max-width:330px)": {
-            fontSize: "7em",
-          },
-        }}
-      >
-        AboutMe
-      </Text>
+      <CoolHeader>AboutMe</CoolHeader>
 
       <Flex
         gap={"lg"}

@@ -5,12 +5,16 @@ type CoolButtonProps = {
   children: React.ReactNode;
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   disabled?: boolean;
+  backgroundColor?: string;
+  hoverColor?: string;
 } & ButtonProps;
 
 export const Coolbutton = ({
   children,
   onClick,
   disabled,
+  backgroundColor,
+  hoverColor,
   ...props
 }: CoolButtonProps) => {
   return (
@@ -26,7 +30,7 @@ export const Coolbutton = ({
         fontFamily: "Liquido Regular",
         fontWeight: "lighter",
         height: "auto",
-        background: "#F6474000",
+        background: backgroundColor ? backgroundColor : "#F6474000",
         width: "5em",
         borderRadius: "0",
         transition: "all .1s linear",
@@ -35,7 +39,7 @@ export const Coolbutton = ({
         root: {
           "&:hover": {
             backgroundPosition: "bottom",
-            background: "#F64740",
+            background: hoverColor ? hoverColor : "#F64740",
             color: "#fffbf4",
           },
           "&:focus": {
