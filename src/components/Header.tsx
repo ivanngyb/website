@@ -1,4 +1,4 @@
-import { Flex, Text } from "@mantine/core";
+import { Box, Flex, Text, Tooltip } from "@mantine/core";
 import { SvgMailIcon } from "../assets";
 import { Coolbutton } from "./Coolbutton";
 import { SocialIcons } from "./SocialIcons";
@@ -90,6 +90,7 @@ export const Header = ({
           >
             Ivan Ng
           </Text>
+
           <Text
             sx={{
               fontSize: "8rem",
@@ -110,25 +111,39 @@ export const Header = ({
           >
             Full Stack Developer
           </Text>
+
           <SocialIcons />
         </Flex>
-        <Coolbutton
-          rightIcon={
-            <SvgMailIcon
-              sx={{
-                fill: "#fff4e0",
-                width: "100%",
-                height: "100%",
-              }}
-            />
+        <Tooltip
+          label={
+            'Masked email for protection. Go to my resume in "About Me" section for real email'
           }
-          onClick={(e: React.MouseEvent<HTMLElement>) => {
-            window.location.href = "mailto:ivanngyb2@gmail.com";
-            e.preventDefault();
+          withArrow
+          position="top"
+          sx={{
+            fontFamily: "Roboto Regular",
           }}
         >
-          ContactMe
-        </Coolbutton>
+          <Box>
+            <Coolbutton
+              rightIcon={
+                <SvgMailIcon
+                  sx={{
+                    fill: "#fff4e0",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              }
+              onClick={(e: React.MouseEvent<HTMLElement>) => {
+                window.location.href = "mailto:fresh.moon7884@fastmail.com";
+                e.preventDefault();
+              }}
+            >
+              ContactMe
+            </Coolbutton>
+          </Box>
+        </Tooltip>
       </Flex>
     </Flex>
   );

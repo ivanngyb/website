@@ -1,4 +1,4 @@
-import { Flex } from "@mantine/core";
+import { Box, Flex, Tooltip } from "@mantine/core";
 import { SvgGithubIcon, SvgLinkedinIcon, SvgMailIcon } from "../assets";
 
 export const SocialIcons = () => {
@@ -32,20 +32,33 @@ export const SocialIcons = () => {
           },
         }}
       />
-      <SvgMailIcon
-        size="3em"
-        fill="#F64740"
-        onClick={() => {
-          window.open("mailto:ivanngyb2@gmail.com");
-        }}
+      <Tooltip
+        label={
+          'Masked email for protection. Go to my resume in "About Me" section for real email'
+        }
+        position="top"
+        withArrow
         sx={{
-          cursor: "pointer",
-          transition: "all 0.2s",
-          "&:hover": {
-            transform: "scale(1.2)",
-          },
+          fontFamily: "Roboto Regular",
         }}
-      />
+      >
+        <Box>
+          <SvgMailIcon
+            size="3em"
+            fill="#F64740"
+            onClick={() => {
+              window.open("mailto:fresh.moon7884@fastmail.com");
+            }}
+            sx={{
+              cursor: "pointer",
+              transition: "all 0.2s",
+              "&:hover": {
+                transform: "scale(1.2)",
+              },
+            }}
+          />
+        </Box>
+      </Tooltip>
     </Flex>
   );
 };
