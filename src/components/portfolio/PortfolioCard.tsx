@@ -79,12 +79,24 @@ export const PortfolioCard = ({
       </Text>
 
       {onClick && (
-        <Flex align={"flex-end"} direction="column" sx={{ marginTop: "2em" }}>
+        <Flex
+          direction="column"
+          sx={{
+            marginTop: "2em",
+            alignItems: "flex-end",
+            "@media (max-width:1350px)": {
+              width: "100%",
+              alignItems: "center",
+            },
+          }}
+        >
           <Coolbutton
             onClick={onClick}
             backgroundColor="#F64740"
             hoverColor="#001122"
-            sx={{ marginTop: "auto" }}
+            sx={{
+              marginTop: "auto",
+            }}
           >
             View Project
           </Coolbutton>

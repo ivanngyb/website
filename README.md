@@ -1,3 +1,5 @@
-# My Personal Portfolio Website
+# My Personal Website
 
-Still WIP
+Personal website made with React, Typescript and Mantine UI
+
+[Visit Website Here](https://ivanng.me/)
