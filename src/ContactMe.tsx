@@ -90,7 +90,7 @@ const ContactMeInner = ({
         padding: "1em 1em",
       }}
     >
-      <LoadingOverlay visible={isLoading} overlayBlur={2} />
+      <LoadingOverlay visible={isLoading} overlayBlur={2} radius={"xl"} />
       <form
         onSubmit={form.onSubmit((values) => {
           SendMessage(values);
