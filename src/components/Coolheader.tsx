@@ -13,7 +13,7 @@ export const CoolHeader = ({ children }: { children: React.ReactNode }) => {
         "@media (max-width:640px)": {
           fontSize: "10em",
         },
-        "@media (max-width:330px)": {
+        "@media (max-width:480px)": {
           fontSize: "7em",
         },
       }}
