@@ -96,7 +96,22 @@ export const Header = ({
 
         <Flex direction={"column"}>
           {sendSuccess ? (
-            <Box>
+            <Box
+              sx={{
+                animationDelay: "0.5s",
+                animation: "circle 2s infinite",
+                animationIterationCount: 1,
+                clipPath: "circle(75%)",
+                "@keyframes circle": {
+                  "100%": {
+                    clipPath: "circle(75%)",
+                  },
+                  "0%": {
+                    clipPath: "circle(0%)",
+                  },
+                },
+              }}
+            >
               <Text
                 sx={{
                   fontSize: "30em",

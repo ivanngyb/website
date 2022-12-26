@@ -1,7 +1,14 @@
-import { Box, Flex, Text, Textarea, TextInput } from "@mantine/core";
+import {
+  Box,
+  Flex,
+  LoadingOverlay,
+  Text,
+  Textarea,
+  TextInput,
+} from "@mantine/core";
 import { useForm } from "@mantine/form";
 import axios from "axios";
-import { ReactHTML, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Coolbutton } from "./components/Coolbutton";
 import { API_ENDPOINT } from "./const";
 
@@ -15,6 +22,57 @@ export const ContactMe = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const SendMessage = useCallback(
+    async (values: { name: string; email: string; message: string }) => {
+      setIsLoading(true);
+      try {
+        const resp = await axios({
+          method: "post",
+          url: `${API_ENDPOINT}/send`,
+          data: {
+            name: values.name,
+            message: values.message,
+            email: values.email,
+          },
+        });
+        if (resp.status !== 200) {
+          setError(true);
+        } else {
+          setShowSuccess(true);
+          setShowForm(false);
+        }
+      } catch (error) {
+        setError(true);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [setShowForm, setShowSuccess, setIsLoading]
+  );
+
+  return (
+    <ContactMeInner
+      SendMessage={SendMessage}
+      isLoading={isLoading}
+      error={error}
+    />
+  );
+};
+
+const ContactMeInner = ({
+  SendMessage,
+  isLoading,
+  error,
+}: {
+  SendMessage: (values: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
+  isLoading: boolean;
+  error: boolean;
+}) => {
   const form = useForm({
     initialValues: {
       name: "",
@@ -25,39 +83,6 @@ export const ContactMe = ({
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
     },
   });
-  type FormValues = typeof form.values;
-
-  const SendMessage = useCallback(
-    (values: FormValues) => {
-      setIsLoading(true);
-      try {
-        (async () => {
-          const resp = await axios({
-            method: "post",
-            url: `${API_ENDPOINT}/send`,
-            data: {
-              name: values.name,
-              message: values.message,
-              email: values.email,
-            },
-          });
-          if (resp.status !== 200) {
-            setError(true);
-          } else {
-            setShowSuccess(true);
-            setShowForm(false);
-          }
-        })();
-      } catch (error) {
-        setError(true);
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    [form.values]
-  );
-
   return (
     <Box
       sx={{
@@ -65,7 +90,12 @@ export const ContactMe = ({
         padding: "1em 1em",
       }}
     >
-      <form onSubmit={form.onSubmit((values) => SendMessage(values))}>
+      <LoadingOverlay visible={isLoading} overlayBlur={2} />
+      <form
+        onSubmit={form.onSubmit((values) => {
+          SendMessage(values);
+        })}
+      >
         <TextInput
           label="Name"
           placeholder="Name"
@@ -153,6 +183,22 @@ export const ContactMe = ({
           )}
         </Flex>
       </form>
+      <Text
+        sx={{
+          color: "#001122",
+          fontFamily: "Liquido Regular",
+          fontSize: "1.5em",
+        }}
+      >
+        Form powered by{" "}
+        <a
+          href="https://github.com/ivanngyb/contact-tele-me"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Me
+        </a>
+      </Text>
     </Box>
   );
 };
