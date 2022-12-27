@@ -9,6 +9,7 @@ import {
 import { useForm } from "@mantine/form";
 import axios from "axios";
 import { useCallback, useState } from "react";
+import { SvgGithubIcon } from "./assets";
 import { Coolbutton } from "./components/Coolbutton";
 import { API_ENDPOINT } from "./const";
 
@@ -183,22 +184,30 @@ const ContactMeInner = ({
           )}
         </Flex>
       </form>
-      <Text
-        sx={{
-          color: "#001122",
-          fontFamily: "Liquido Regular",
-          fontSize: "1.5em",
-        }}
-      >
-        Form powered by{" "}
-        <a
-          href="https://github.com/ivanngyb/contact-tele-me"
-          target="_blank"
-          rel="noreferrer"
+      <Flex align={"center"}>
+        <Text
+          sx={{
+            color: "#001122",
+            fontFamily: "Liquido Regular",
+            fontSize: "1.5em",
+          }}
         >
-          Me
-        </a>
-      </Text>
+          Form powered by{" "}
+          <a
+            href="https://github.com/ivanngyb/contact-tele-me"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Me
+          </a>
+        </Text>
+        <SvgGithubIcon
+          sx={{ display: "inline", padding: "0.5em 0.5em" }}
+          width="1.5em"
+          height="1.5em"
+          fill="#001122"
+        />
+      </Flex>
     </Box>
   );
 };

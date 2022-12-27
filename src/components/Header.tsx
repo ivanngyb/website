@@ -94,7 +94,7 @@ export const Header = ({
           </Coolbutton>
         </Flex>
 
-        <Flex direction={"column"}>
+        <Flex direction={"column"} sx={{ marginBottom: "2em" }}>
           {sendSuccess ? (
             <Box
               sx={{
@@ -151,7 +151,7 @@ export const Header = ({
                   },
                 }}
               >
-                Will Reach Out Soon
+                I Will Reach Out Soon
               </Text>
             </Box>
           ) : (
