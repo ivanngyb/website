@@ -14,26 +14,8 @@ export const Header = ({
   togglePortfolio: React.Dispatch<React.SetStateAction<boolean>>;
   toggleAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const [canForm, setCanForm] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [sendSuccess, setSendSuccess] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const resp = await axios({
-          method: "get",
-          url: `${API_ENDPOINT}/check`,
-        });
-
-        if (resp.status === 200) {
-          setCanForm(true);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
 
   return (
     <Flex
@@ -202,48 +184,13 @@ export const Header = ({
 
           <SocialIcons />
         </Flex>
-        {canForm ? (
-          <>
-            <Coolbutton
-              onClick={() => {
-                setShowForm(true);
-              }}
-            >
-              ContactMe
-            </Coolbutton>
-          </>
-        ) : (
-          <Tooltip
-            label={
-              'Masked email for protection. Go to my resume in "About Me" section for real email'
-            }
-            withArrow
-            position="top"
-            sx={{
-              fontFamily: "Roboto Regular",
-            }}
-          >
-            <Box>
-              <Coolbutton
-                rightIcon={
-                  <SvgMailIcon
-                    sx={{
-                      fill: "#fff4e0",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  />
-                }
-                onClick={(e: React.MouseEvent<HTMLElement>) => {
-                  window.location.href = "mailto:fresh.moon7884@fastmail.com";
-                  e.preventDefault();
-                }}
-              >
-                ContactMe
-              </Coolbutton>
-            </Box>
-          </Tooltip>
-        )}
+        <Coolbutton
+          onClick={() => {
+            setShowForm(true);
+          }}
+        >
+          ContactMe
+        </Coolbutton>
       </Flex>
 
       {showForm && (
